@@ -1,4 +1,4 @@
-import { ISpecificationsRepository } from '../../repositories/ISpecificatonsRepository';
+import { ISpecificationsRepository } from '../../../repositories/ISpecificatonsRepository';
 
 interface IRequest {
   name: string;
@@ -6,7 +6,8 @@ interface IRequest {
 }
 
 export class CreateSpecificationUseCase {
-  constructor(private specificationsRepository: ISpecificationsRepository) {}
+  // eslint-disable-next-line prettier/prettier
+  constructor(private specificationsRepository: ISpecificationsRepository) { }
 
   execute({ name, description }: IRequest) {
     const specificationExists = this.specificationsRepository.findByName(name);

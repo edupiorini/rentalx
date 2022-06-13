@@ -1,4 +1,4 @@
-import { ICategoriesRepository } from '../../repositories/ICategoriesRepository';
+import { ICategoriesRepository } from '../../../repositories/ICategoriesRepository';
 
 interface IRequest {
   name: string;
@@ -10,7 +10,8 @@ interface IRequest {
  *  Acessar o repositorio
  */
 class CreateCategoryUseCase {
-  constructor(private categoriesRepository: ICategoriesRepository) {}
+  // eslint-disable-next-line prettier/prettier
+  constructor(private categoriesRepository: ICategoriesRepository) { }
 
   execute({ name, description }: IRequest): void {
     const categoryExists = this.categoriesRepository.findByName(name);
